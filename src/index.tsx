@@ -189,6 +189,10 @@ app.frame("/display-info", (c) => {
   });
 });
 
+app.hono.get("/health-check", (c) => {
+  return c.text("ALl good!");
+});
+
 app.use("/*", serveStatic({ root: "./public" }));
 devtools(app, { serveStatic });
 
